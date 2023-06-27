@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:new_flutter/models/product_model.dart';
+import '../models/cart_model.dart';
+import '../widget/app_button.dart';
 import '../widget/header.dart';
 
 
@@ -129,17 +131,17 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   Align(
                     alignment: Alignment.center,
                     child: Container(
-                      height: 50,
-                      width: 50,
+                      height: 35,
+                      width: 80,
                       decoration: BoxDecoration(
-                       // color: Colors.black,
-                        borderRadius: BorderRadius.circular(1),
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(5),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
                             child: Text("${allProducts.first.price} PKR",
-                                style: const TextStyle(color: Colors.black))),
+                                style: const TextStyle(color: Colors.white))),
                       ),
                     ),
                   ),
@@ -241,47 +243,47 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         Align(
                           alignment: Alignment.center,
                           child: Container(
-                            height: 50,
-                            width: 50,
+                            height: 35,
+                            width: 100,
                             decoration: BoxDecoration(
-                             // color: Colors.black,
+                              color: Colors.black,
                               borderRadius: BorderRadius.circular(1),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Center(
                                   child: Text("$newPrice PKR",
-                                      style: const TextStyle(color: Colors.black))),
+                                      style:const TextStyle(color: Colors.white))),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  // EcoButton(
-                  //   isLoginButton: true,
-                  //   isLoading: isLoading,
-                  //   onPress: () {
-                  //     setState(() {
-                  //       isLoading = true;
-                  //     });
-                  //     Cart.addtoCart(Cart(
-                  //             id: allProducts.first.id,
-                  //             image: allProducts.first.imageUrls!.first,
-                  //             name: allProducts.first.productName,
-                  //             quantity: count,
-                  //             price: newPrice))
-                  //         .whenComplete(() {
-                  //       setState(() {
-                  //         isLoading = false;
-                  //         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  //             content: Text("Added to cart successfully")));
-                  //       });
-                  //     });
-                  //   },
-                  //   title: "Add to Cart",
-                  // ),
-                  SizedBox(height: 70),
+                  AppButton(
+                    isLoginButton: true,
+                    isLoading: isLoading,
+                    onPress: () {
+                      setState(() {
+                        isLoading = true;
+                      });
+                      CartModel.addtoCart(CartModel(
+                              id: allProducts.first.id,
+                              image: allProducts.first.imageUrls!.first,
+                              name: allProducts.first.productName,
+                              quantity: count,
+                              price: newPrice))
+                          .whenComplete(() {
+                        setState(() {
+                          isLoading = false;
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                              content: Text("Added to cart successfully")));
+                        });
+                      });
+                    },
+                    title: "Add to Cart",
+                  ),
+                  const SizedBox(height: 70),
                 ],
               ),
             ),

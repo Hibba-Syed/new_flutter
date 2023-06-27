@@ -88,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             hintText: "Email...",
                             validate: (v) {
                               if (v!.isEmpty) {
-                                return "email is badly formated";
+                                return "email is badly formatted";
                               }
                               return null;
                             },

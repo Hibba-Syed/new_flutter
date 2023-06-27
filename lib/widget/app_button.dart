@@ -19,7 +19,7 @@ class AppButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPress,
       child: Container(
-        height: 60,
+        height: 50,
         margin: const EdgeInsets.symmetric(horizontal: 17, vertical: 10),
         width: double.infinity,
         decoration: BoxDecoration(
@@ -44,7 +44,7 @@ class AppButton extends StatelessWidget {
             ),
             Visibility(
               visible: isLoading!,
-              child: Center(
+              child: const Center(
                 child: CircularProgressIndicator(),
               ),
             ),

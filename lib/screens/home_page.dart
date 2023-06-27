@@ -63,10 +63,10 @@ class _HomeScreenState extends State<HomeScreen> {
       SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 110,
               child: Column(
-                children: const [
+                children: [
                   CategoryHomeBoxes(),
                 ],
               ),

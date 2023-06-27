@@ -10,7 +10,7 @@ class CartScreen extends StatelessWidget {
 
   delete(String id, BuildContext context) {
     db.doc(id).delete().then((value) => ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text("succesfully deleted"))));
+        .showSnackBar(const SnackBar(content: Text("successfully deleted"))));
   }
 
   @override
@@ -45,7 +45,7 @@ class CartScreen extends StatelessWidget {
                               color: Colors.grey.withOpacity(0.4),
                               blurRadius: 3,
                               spreadRadius: 3,
-                              offset: Offset(3, 3)),
+                              offset: const Offset(3, 3)),
                         ]),
                     child: Row(
                       children: [
@@ -66,26 +66,26 @@ class CartScreen extends StatelessWidget {
                                   children: [
                                     Row(
                                       children: [
-                                        Text("Qty : "),
+                                        const Text("Qty : "),
                                         Container(
                                             color: Colors.black,
                                             alignment: Alignment.center,
-                                            constraints: BoxConstraints(
+                                            constraints: const BoxConstraints(
                                                 minWidth: 30,
                                                 minHeight: 20,
                                                 maxWidth: 30,
                                                 maxHeight: 20),
                                             child: Text(
                                               "${res['quantity']}",
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   color: Colors.white),
                                             )),
                                       ],
                                     ),
-                                    SizedBox(width: 5),
+                                    const SizedBox(width: 5),
                                     Row(
                                       children: [
-                                        Text("Price : "),
+                                        const Text("Price : "),
                                         Text(
                                           "${res['price']}",
                                           // style: TextStyle(color: Colors.white,),
@@ -102,7 +102,7 @@ class CartScreen extends StatelessWidget {
                           onTap: () {
                             delete(res.id, context);
                           },
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 10,
                             backgroundColor: Colors.red,
                             child: Icon(

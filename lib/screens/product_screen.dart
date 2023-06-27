@@ -9,7 +9,6 @@ class ProductScreen extends StatefulWidget {
   // const ProductScreen({Key? key}) : super(key: key);
   String? category;
   ProductScreen({this.category});
-
   @override
   State<ProductScreen> createState() => _ProductScreenState();
 }
