@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:new_flutter/screens/product_detail_screen.dart';
+import 'package:new_flutter/screens/product_screen.dart';
 import 'cart_screen.dart';
 import 'favourite-screen.dart';
 import 'home_page.dart';
@@ -65,7 +66,7 @@ class _DashboardState extends State<Dashboard> {
     // NewsWidget(model: provider.news.first,),
     CartScreen(),
     const FavouriteScreen(),
-    const ProductDetailScreen(),
+     ProductScreen(),
   ];
   Widget bottomNavigationBar() {
     return BottomNavigationBar(

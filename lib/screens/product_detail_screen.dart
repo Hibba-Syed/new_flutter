@@ -30,8 +30,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           .where((element) => element["id"] == widget.id)
           .forEach((e) {
         if (e.exists) {
-          for (var item in e["imageUrls"]) {
-            if (item.isNotEmpty) {
+          // for (var item in e["imageUrls"]) {
+          //   if (item.isNotEmpty) {
               setState(() {
                 allProducts.add(
                   ProductsModel(
@@ -44,8 +44,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 );
               });
             }
-          }
-        }
+        //   }
+        // }
         newPrice = allProducts.first.price!;
       });
     });
